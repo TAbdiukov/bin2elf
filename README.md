@@ -1,11 +1,13 @@
 # bin2elf
 
-Convert a raw binary blob (e.g., a firmware dump) into a minimal **ARM ELF** file with a chosen load address—handy for disassemblers, debuggers, and reverse‑engineering tools that expect ELF. By Tim Abdiukov.
+Convert a raw binary blob (e.g., a firmware dump) into a minimal **ARM ELF** file with a chosen load address—handy for disassemblers, debuggers, and reverse‑engineering tools that expect ELF.
 
-This repository contains a single script:
+By **Tim Abdiukov**.
+
+This package provides a single CLI command:
 
 ```
-bin2elf.py
+bin2elf
 ```
 
 It wraps GNU binutils (`arm-none-eabi-*`) in a tiny pipeline that:
@@ -23,7 +25,7 @@ It wraps GNU binutils (`arm-none-eabi-*`) in a tiny pipeline that:
 
 ## Requirements
 
-* **Python** ≥ 3.6
+* **Python** ≥ 3.7
 * **GNU ARM Embedded binutils** available on your `PATH`:
 
   * `arm-none-eabi-ld`
@@ -39,42 +41,39 @@ It wraps GNU binutils (`arm-none-eabi-*`) in a tiny pipeline that:
 
 ## Installation
 
-Clone or copy the script anywhere on your machine and make it executable:
-
 ```bash
-chmod +x bin2elf.py
+pip install bin2elf
 ```
-
-No other install steps are needed.
 
 ## Usage
 
 ```bash
-./bin2elf.py <input.bin> <output.elf> <load_addr_hex> [--endian little|big]
+bin2elf <input.bin> <output.elf> <load_addr> [--endian little|big] [--prefix arm-none-eabi-]
 ```
 
 **Positional arguments**
 
 * `input` – path to the raw binary file.
 * `output` – desired ELF output path.
-* `load_addr` – **hex** load address (e.g., `0x08000000`).
+* `load_addr` – load address (e.g., `0x08000000`; accepts `0x` hex or decimal).
 
 **Options**
 
 * `--endian {little,big}` – target endianness (default: `little`).
+* `--prefix` – toolchain prefix (default: `arm-none-eabi-`).
 
 ### Examples
 
 Little‑endian blob at `0x08000000`:
 
 ```bash
-./bin2elf.py firmware.bin firmware.elf 0x08000000
+bin2elf firmware.bin firmware.elf 0x08000000
 ```
 
-Big‑endian blob at `0x100000`:
+Big‑endian blob at `0x00100000`:
 
 ```bash
-./bin2elf.py image.bin image_be.elf 0x00100000 --endian big
+bin2elf image.bin image_be.elf 0x00100000 --endian big
 ```
 
 Analyze the result:
@@ -92,6 +91,7 @@ arm-none-eabi-objdump -D firmware.elf | less
 ## Security
 
 This tool does not execute your binary; it just wraps bytes into an ELF container. Still, be mindful when opening unknown binaries in debuggers or emulators. Happy reversing! 🛠️📦
+
 
 ----------------------------------
 **Tim Abdiukov**
