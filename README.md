@@ -94,4 +94,4 @@ This tool does not execute your binary; it just wraps bytes into an ELF containe
 
 
 ----------------------------------
-**Tim Abdiukov**
+Tim Abdiukov
