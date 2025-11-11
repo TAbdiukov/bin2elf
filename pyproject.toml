@@ -7,21 +7,39 @@ name = "bin2elf"
 version = "0.1.0"
 description = "Convert a raw binary blob into a minimal ARM ELF at a chosen load address."
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.6"
 license = {file = "LICENSE"}
 authors = [
   { name = "Tim Abdiukov" }
 ]
-keywords = ["elf", "binutils", "firmware", "reverse engineering", "arm"]
+keywords = [
+  "elf", "firmware", "reverse engineering", "arm", "binutils",
+  "IDA Pro", "ida-pro", "IDA", "IDAPython"
+]
 classifiers = [
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3 :: Only",
-  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.6",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Operating System :: POSIX",
+  "Operating System :: POSIX :: Linux",
+  "Operating System :: POSIX :: Other", # for WSL
+  "Operating System :: MacOS",
+  "Operating System :: MacOS :: MacOS X",
   "Environment :: Console",
-  "Operating System :: OS Independent",
   "Topic :: Software Development :: Build Tools",
+  "Topic :: Software Development :: Disassemblers",
   "Topic :: Security",
-  "Intended Audience :: Developers"
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
 ]
 
 [project.urls]
