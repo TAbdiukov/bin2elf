@@ -1,8 +1,8 @@
 # bin2elf
 
-Convert a raw binary blob (e.g., a firmware dump) into a minimal **ARM ELF** file with a chosen load address—handy for disassemblers, debuggers, and reverse‑engineering tools that expect ELF.
+Convert a raw binary blob (e.g., a firmware dump) into a minimal **ARM ELF** file with a chosen load address - handy for disassemblers, debuggers, and reverse-engineering tools that expect ELF.
 
-By **Tim Abdiukov**.
+Linux-only
 
 This package provides a single CLI command:
 
@@ -21,11 +21,11 @@ It wraps GNU binutils (`arm-none-eabi-*`) in a tiny pipeline that:
 
 * 🔧 **Choose endianness**: little or big (`-EL` / `-EB`).
 * 📍 **Explicit base address**: place `.text` exactly at `--load_addr` (e.g., `0x08000000`).
-* 🧰 **Pure binutils** under the hood: predictable, portable.
+* 🧰 **Pure binutils** under the hood: predictable and portable.
 
 ## Requirements
 
-* **Python** ≥ 3.7
+* **Python** = 3.7
 * **GNU ARM Embedded binutils** available on your `PATH`:
 
   * `arm-none-eabi-ld`
@@ -64,13 +64,13 @@ bin2elf <input.bin> <output.elf> <load_addr> [--endian little|big] [--prefix arm
 
 ### Examples
 
-Little‑endian blob at `0x08000000`:
+Little-endian blob at `0x08000000`:
 
 ```bash
 bin2elf firmware.bin firmware.elf 0x08000000
 ```
 
-Big‑endian blob at `0x00100000`:
+Big-endian blob at `0x00100000`:
 
 ```bash
 bin2elf image.bin image_be.elf 0x00100000 --endian big
