@@ -1,5 +1,10 @@
 # bin2elf
 
+[![GitHub](https://img.shields.io/badge/GitHub-TAbdiukov/bin2elf-black?logo=github)](https://github.com/TAbdiukov/bin2elf)
+[![PyPI Version](https://img.shields.io/pypi/v/bin2elf.svg)](https://pypi.org/project/bin2elf) 
+![License](https://img.shields.io/github/license/TAbdiukov/bin2elf)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/tabdiukov)
+
 Convert a raw binary blob (e.g., a firmware dump) into a minimal **ARM ELF** file with a chosen load address - handy for disassemblers, debuggers, and reverse-engineering tools that expect ELF.
 
 **macOS & Linux systems (Windows supported via WSL).**
