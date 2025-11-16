@@ -2,7 +2,7 @@
 
 Convert a raw binary blob (e.g., a firmware dump) into a minimal **ARM ELF** file with a chosen load address - handy for disassemblers, debuggers, and reverse-engineering tools that expect ELF.
 
-Linux-only
+**macOS & Linux systems (Windows supported via WSL).**
 
 This package provides a single CLI command:
 
@@ -59,7 +59,7 @@ bin2elf <input.bin> <output.elf> <load_addr> [--endian little|big] [--prefix arm
 
 **Options**
 
-* `--endian {little,big}` – target endianness (default: `little`).
+* `--endian {little,big}` – **important**, target endianness (default: `little`).
 * `--prefix` – toolchain prefix (default: `arm-none-eabi-`).
 
 ### Examples
@@ -93,5 +93,5 @@ arm-none-eabi-objdump -D firmware.elf | less
 This tool does not execute your binary; it just wraps bytes into an ELF container. Still, be mindful when opening unknown binaries in debuggers or emulators. Happy reversing! 🛠️📦
 
 
-----------------------------------
-Tim Abdiukov
+---
+**Tim Abdiukov**
