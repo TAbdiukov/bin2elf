@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "bin2elf"
-version = "0.1.2"
+version = "0.1.4"
 description = "Convert a raw binary blob into a minimal ARM ELF at a chosen load address."
 readme = "README.md"
 requires-python = ">=3.7"
