@@ -1,9 +1,10 @@
 # Changelog
 
-## 0.1.2
+## 0.1.4
 
+- Bump Python version required to Python 3.7
 - Update README
-- Remove deprecated TOML
+- Remove deprecated and unnecessary TOML
 
 ## 0.1.0 - initial release
 - Package the `bin2elf` CLI.
