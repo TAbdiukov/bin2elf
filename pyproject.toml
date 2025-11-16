@@ -4,11 +4,12 @@ build-backend = "hatchling.build"
 
 [project]
 name = "bin2elf"
-version = "0.1.0"
+version = "0.1.2"
 description = "Convert a raw binary blob into a minimal ARM ELF at a chosen load address."
 readme = "README.md"
-requires-python = ">=3.6"
-license = {file = "LICENSE"}
+requires-python = ">=3.7"
+license = "Apache-2.0"
+license-files = ["LICENCE"]
 authors = [
   { name = "Tim Abdiukov" }
 ]
