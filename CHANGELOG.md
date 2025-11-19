@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.5
+
+- PyPI: Restore generic Py3 classifier
+
 ## 0.1.4
 
 - Bump Python version required to Python 3.7
